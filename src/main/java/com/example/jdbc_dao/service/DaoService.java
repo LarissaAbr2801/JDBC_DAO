@@ -3,6 +3,8 @@ package com.example.jdbc_dao.service;
 import com.example.jdbc_dao.repository.DaoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DaoService {
 
@@ -12,7 +14,7 @@ public class DaoService {
         this.daoRepository = daoRepository;
     }
 
-    public String getProductName(String name) {
+    public List<String> getProductName(String name) {
         return daoRepository.getProductName(name);
     }
 }
