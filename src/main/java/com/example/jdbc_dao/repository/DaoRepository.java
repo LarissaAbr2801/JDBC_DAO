@@ -1,7 +1,6 @@
 package com.example.jdbc_dao.repository;
 
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -33,8 +33,8 @@ public class DaoRepository {
         }
     }
 
-    public String getProductName(String name) {
-        return namedParameterJdbcTemplate.query(read(SCRIPT_FILE_NAME),
-                Map.of(NAMED_PARAM, name), new SingleColumnRowMapper<>(String.class)).toString();
+    public List<String> getProductName(String name) {
+        return namedParameterJdbcTemplate.queryForList(read(SCRIPT_FILE_NAME),
+                Map.of(NAMED_PARAM, name),String.class);
     }
 }

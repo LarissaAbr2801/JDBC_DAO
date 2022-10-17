@@ -3,6 +3,8 @@ package com.example.jdbc_dao.controller;
 import com.example.jdbc_dao.service.DaoService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/")
 public class DaoController {
@@ -14,7 +16,7 @@ public class DaoController {
     }
 
     @GetMapping("products/fetch-product")
-    public String getProductName(@RequestParam String name) {
+    public List<String> getProductName(@RequestParam String name) {
         return daoService.getProductName(name);
     }
 }
