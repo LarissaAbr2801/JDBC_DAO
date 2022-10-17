@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="create-tables_v1" author="ala">
+        <insert tableName="customers">
+            <column name="id" value="111"/>
+            <column name="name" value="Ivan"/>
+            <column name="surname" value="Ivanov"/>
+            <column name="age" value="12"/>
+            <column name="phone_number" value="2345"/>
+        </insert>
+        <insert tableName="customers">
+            <column name="id" value="22"/>
+            <column name="name" value="Ivan"/>
+            <column name="surname" value="Smirnov"/>
+            <column name="age" value="23"/>
+            <column name="phone_number" value="45"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="id" value="1"/>
+            <column name="date" value="2020-03-23 00:00"/>
+            <column name="customer_id" value="111"/>
+            <column name="product_name" value="product"/>
+            <column name="amount" value="23"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="id" value="2"/>
+            <column name="date" value="2020-03-23 00:00"/>
+            <column name="customer_id" value="22"/>
+            <column name="product_name" value="car"/>
+            <column name="amount" value="23"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
