@@ -1,7 +1,3 @@
-create schema shop;
-
-set schema 'shop';
-
 create TABLE CUSTOMERS
 (id SERIAL PRIMARY KEY,
  name VARCHAR(100) not null,
